@@ -23,6 +23,22 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(255),
             allowNull: false
         },
+        class_id:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false,
+        },
+        age:{
+            type: DataTypes.INTEGER(20),
+            allowNull: true,
+        },
+        sex:{
+            type: DataTypes.STRING(20),
+            allowNull: true,
+        },
+        telephone:{
+            type: DataTypes.INTEGER(20),
+            allowNull: true,
+        },
         createdAt: {
             type: DataTypes.DATE,
             get() {

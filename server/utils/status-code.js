@@ -1,4 +1,11 @@
 const statusCode = {
+  ERROR_400: (msg) => {
+    return {
+        code:400,
+        msg
+    }
+  },
+
   ERROR_401: (msg) => {
       return {
           code: 401,
