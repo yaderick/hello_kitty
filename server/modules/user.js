@@ -24,13 +24,15 @@ class UserModel{
    * @returns {Promise<boolean>}
   */
   static async create(userInfo){
-    let {zhName, enName, password, pwd, class_id} = userInfo;
+    let {zhName, enName, password, pwd, class_id, sex, telephone} = userInfo;
     return await User.create({
       zhName,
       enName,
       password,
       pwd,
-      class_id
+      class_id,
+      sex,
+      telephone
     })
   }
 }

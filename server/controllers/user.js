@@ -13,6 +13,7 @@ class UserController {
    */
   static async create(ctx, next){
     const user = ctx.request.body;
+
      if (user.zhName && user.enName) {
           let { zhName , enName} = user
           const username = zhName + '_' + enName

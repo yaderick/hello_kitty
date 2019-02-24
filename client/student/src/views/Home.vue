@@ -2,12 +2,11 @@
   <section class="home">
     <img v-lazy="require('@/assets/backimg.png')" alt="logo">
     <div class="btn">
-      <mu-button color="secondary" event="handleRegister">注册</mu-button>
-      <mu-button color="secondary">登录</mu-button>
+      <mu-button color="secondary" :to="'/register'">注册</mu-button>
+      <mu-button color="secondary"  :to="'/login'">登录</mu-button>
     </div>
   </section>
 </template>
-
 <script>
 
 export default {
@@ -17,9 +16,6 @@ export default {
     }
   },
   methods: {
-    handleRegister(){
-    debugger
-  }
   },
 };
 </script>

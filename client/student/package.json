@@ -3,14 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "muse-ui": "^3.0.2",
+    "muse-ui-loading": "^0.2.0",
+    "muse-ui-message": "^0.2.1",
+    "muse-ui-toast": "^0.3.0",
+    "vconsole": "^3.3.0",
     "vue": "^2.5.22",
     "vue-lazyload": "^1.2.6",
+    "vue-ls": "^3.2.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

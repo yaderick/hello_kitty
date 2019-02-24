@@ -1,6 +1,6 @@
 const Koa = require('koa')
 const app = new Koa()  // 第一步:创建实例
-
+const cors = require('koa-cors');
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
@@ -13,6 +13,8 @@ const users = require('./routes/users')
 
 // error handler
 onerror(app)
+
+app.use(cors());
 
 // middlewares 第二步:app.use()传入中间件
 app.use(bodyparser({
