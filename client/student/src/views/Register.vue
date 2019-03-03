@@ -26,7 +26,7 @@
       </mu-form-item>
       <mu-form-item prop="class_id" label="班级:" :rules="class_idRules">
         <mu-select v-model="formData.class_id"  full-width>
-          <mu-option v-for="(option,index) in classes" :key="index" :label="String(option)" :value="option"></mu-option>
+          <mu-option v-for="(option,index) in classes" :key="index" :label="option.label" :value="option.value"></mu-option>
         </mu-select>
       </mu-form-item>
       <mu-form-item prop="age" label="出生日期:">
@@ -58,6 +58,7 @@ export default {
   mixins:[rules],
   created() {
     this.interceptors()
+    this.queryClass()
   },
   data(){
     return {
@@ -71,7 +72,7 @@ export default {
         password: '',
         repeat: ''
       },
-      classes:[1,2],
+      classes:[],
     }
   },
   methods: {
@@ -94,7 +95,25 @@ export default {
         return Promise.reject(error)
       });
     },
-
+    queryClass(){
+      // let _this = this
+      Util.ajax({
+          method: 'get',
+          url: '/class/list',
+          timeout: 30000,
+          headers:{'Content-Type' : "application/json" }
+        }).then(res => {
+          if(res.data.code == 200) {
+            const list = res.data.data.classList;
+            this.classes = list.map(classVal => {
+              return {
+                label: classVal.className,
+                value: classVal.id
+              }
+            })
+          }
+        })
+    },
     submit(){
 
       this.$refs.register.validate().then(res => {
