@@ -17,7 +17,7 @@ router.post('/login', UserController.login);
 // router.delete('/delete/:id', UserController.delete);
 // // 获取用户信息
 // router.get('/info', UserController.getUserInfo);
-// // 获取用户列表
-// router.get('/list', UserController.getUserList);
+// 获取用户列表
+router.get('/list', UserController.getUserList);
 
 module.exports = router

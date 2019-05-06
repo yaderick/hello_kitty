@@ -29,6 +29,15 @@ export default new Router({
           component: () => import(/* webpackChunkName: "User" */ './views/User'),
         },
         {
+          path: '/user/creat',
+          name: 'creatUser',
+          meta: {
+            name: '新增学生',
+            icon: 'md-lock',
+          },
+          component: () => import(/* webpackChunkName: "User" */ './views/User/creat'),
+        },
+        {
           path: 'class/list',
           name: 'classList',
           meta: {

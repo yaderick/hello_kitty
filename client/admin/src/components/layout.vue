@@ -8,6 +8,7 @@
                         学生管理
                     </template>
                     <MenuItem name="1-1" to="/user/list">学生列表</MenuItem>
+                    <MenuItem name="1-2" to="/user/creat">新增学生</MenuItem>
                 </Submenu>
                 <Submenu name="2">
                     <template slot="title">
@@ -15,14 +16,15 @@
                         班级管理
                     </template>
                     <MenuItem name="2-1" to="/class/list">班级列表</MenuItem>
-                    <MenuItem name="2-2" to="/class/create">增加班级</MenuItem>
+                    <MenuItem name="2-2" to="/class/create">新增班级</MenuItem>
                 </Submenu>
                 <Submenu name="3">
                     <template slot="title">
                         <Icon type="ios-analytics"></Icon>
                         打卡管理
                     </template>
-                    <MenuItem name="3-1" to="/attend/list">打卡列表</MenuItem>
+                    <MenuItem name="3-1" to="/attend/list">当日打卡列表</MenuItem>
+                    <MenuItem name="3-2" to="/attend/list">作业点评</MenuItem>
                 </Submenu>
             </Menu>
         </Sider>

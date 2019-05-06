@@ -9,7 +9,7 @@ router.prefix('/attendance')
  */
 
 // 打卡插入数据
-router.get('/create', AttendanceController.create);
+router.post('/update', AttendanceController.update);
 
 
 module.exports = router;

@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const util = require('util')
 const verify = util.promisify(jwt.verify)
 const bcrypt = require('bcryptjs');
+const attendModel = require('../modules/attendance');
+const statusCode = require('../utils/status-code');
 
 class AttendanceController{
  
@@ -34,6 +36,14 @@ class AttendanceController{
           ctx.body = statusCode.ERROR_412('查询失败，authorization error!')
       }
     }
+  }
+
+  static async update(ctx){
+    const playoad = ctx.request.body
+
+    await attendModel.update(playoad)
+    ctx.response.status = 200;
+    ctx.body = statusCode.SUCCESS_200('打卡成功')
   }
 
 }

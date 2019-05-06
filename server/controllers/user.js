@@ -54,6 +54,30 @@ class UserController {
             ctx.body ='创建失败，参数错误';
         }
   }
+   /**
+   * 创建用户
+   * @param ctx
+   * @returns {Promise<void>}
+   */
+  static async getUserList(ctx, next){
+    // let userList = ctx.request.body;
+        // if (userList) {
+        //     const data = await userModel.findAllUserList();
+
+        //     ctx.response.status = 200;
+        //     ctx.body = statusCode.SUCCESS_200('查询成功', data)
+        // } else {
+
+        //     ctx.response.status = 412;
+        //     ctx.body = statusCode.ERROR_412('获取失败')
+
+        // }
+    let  data = await userModel.findAllUserList();
+  
+
+    ctx.response.status = 200;
+    ctx.body = statusCode.SUCCESS_200('查询成功', data)
+  } 
   /**
    * 登录
    * @param ctx
@@ -92,5 +116,6 @@ class UserController {
       ctx.body = statusCode.ERROR_403('用户不存在');
     }
   }
+  
 }
 module.exports = UserController

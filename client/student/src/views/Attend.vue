@@ -1,6 +1,7 @@
 <template>
   <div>
     欢迎👏 {{name}}
+
   </div>
 </template>
 <script>
